@@ -287,6 +287,7 @@ public class AuthorizationHelperService {
             sendOtpDto.setTransactionId(transaction.getAuthTransactionId());
             sendOtpDto.setIndividualId(otpRequest.getIndividualId());
             sendOtpDto.setOtpChannels(otpRequest.getOtpChannels());
+             sendOtpDto.setAdditionalInfo(otpRequest.getAdditionalInfo());
             sendOtpResult = authenticationWrapper.sendOtp(transaction.getRelyingPartyId(), transaction.getClientId(),
                     sendOtpDto);
         } catch (SendOtpException e) {

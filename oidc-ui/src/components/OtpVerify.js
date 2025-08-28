@@ -52,6 +52,9 @@ export default function OtpVerify({
   const otpLengthValue =
     openIDConnectService.getEsignetConfiguration(configurationKeys.otpLength) ??
     process.env.REACT_APP_OTP_LENGTH;
+
+    console.log("otpLengthValue",otpLengthValue);
+    
   const otpLength = parseInt(otpLengthValue);
 
   const [loginState, setLoginState] = useState(fieldsState);

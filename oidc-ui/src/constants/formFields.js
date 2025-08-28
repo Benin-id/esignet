@@ -83,8 +83,39 @@ const otpFields = [
     maxLength: "",
     regex: ""
   },
+  {
+    labelText: "country_code_label",
+    labelFor: "countryCode",
+    id: "countryCode",
+    name: "countryCode",
+    type: "text",
+    autoComplete: "tel-country-code",
+    isRequired: true,
+    placeholder: "country_code_placeholder",
+    infoIcon: config["otp_info_icon"],
+    errorCode: "IDA-MLC-005",
+    prefix: "",
+    postfix: "",
+    maxLength: "5",
+    regex: "^\\+?[0-9]{1,4}$"   // allows +91, +1, etc.
+  },
+  {
+    labelText: "phone_number_label",
+    labelFor: "phoneNumber",
+    id: "phoneNumber",
+    name: "phoneNumber",
+    type: "text",
+    autoComplete: "tel-national",
+    isRequired: true,
+    placeholder: "phone_number_placeholder",
+    infoIcon: config["otp_info_icon"],
+    errorCode: "IDA-MLC-006",
+    prefix: "",
+    postfix: "",
+    maxLength: "15",
+    regex: "^[0-9]{6,15}$"   // allows 6–15 digit phone numbers
+  }
 ];
-
 const bioLoginFields = {
   inputFields: [
     {

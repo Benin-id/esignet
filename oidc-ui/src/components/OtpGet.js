@@ -109,12 +109,18 @@ export default function OtpGet({
       let vid = fields[0].prefix + loginState["Otp_mosip-vid"] + fields[0].postfix;
 
       let otpChannels = commaSeparatedChannels.split(",").map((x) => x.trim());
+        let additionalInfo = {
+        code: loginState["Otp_countryCode"],
+        mobile: loginState["Otp_phoneNumber"],
+      };
+      console.log("additionalInfo",additionalInfo)
 
       setStatus({ state: states.LOADING, msg: "sending_otp_msg" });
       const sendOtpResponse = await post_SendOtp(
         transactionId,
         vid,
         otpChannels,
+        additionalInfo,
         captchaToken
       );
       setStatus({ state: states.LOADED, msg: "" });

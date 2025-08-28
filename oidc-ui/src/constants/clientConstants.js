@@ -72,7 +72,7 @@ const configurationKeys = {
   linkedTransactionExpireInSecs: "linked-transaction-expire-in-secs",
   qrCodeBufferInSecs: "wallet.qr-code-buffer-in-secs",
   authTxnIdLength: "auth.txnid.length",
-  otpLength: "otp.length",
+  otpLength: "5",
   passwordRegex: "password.regex",
   passwordMaxLength: "password.max-length",
   usernameRegex: "username.regex",

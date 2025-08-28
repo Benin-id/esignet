@@ -10,6 +10,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Map;
 import java.util.List;
 
 @Data
@@ -17,5 +18,6 @@ public class SendOtpDto {
 
     private String transactionId;
     private String individualId;
+    private Map<String,String> additionalInfo;
     private List<String> otpChannels;
 }

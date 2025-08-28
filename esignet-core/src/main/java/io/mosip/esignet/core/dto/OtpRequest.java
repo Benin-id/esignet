@@ -12,6 +12,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Map;
 import java.util.List;
 
 @Data
@@ -22,6 +23,8 @@ public class OtpRequest {
 
     @NotBlank(message = ErrorConstants.INVALID_IDENTIFIER)
     private String individualId;
+
+    private Map<String,String> additionalInfo;
 
     @NotNull(message = ErrorConstants.INVALID_OTP_CHANNEL)
     @Size(min = 1, message = ErrorConstants.INVALID_OTP_CHANNEL)

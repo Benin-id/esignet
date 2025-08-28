@@ -157,6 +157,7 @@ class authService {
     transactionId,
     individualId,
     otpChannels,
+    additionalInfo,
     captchaToken
   ) => {
     let request = {
@@ -165,6 +166,7 @@ class authService {
         transactionId: transactionId,
         individualId: individualId,
         otpChannels: otpChannels,
+         additionalInfo:additionalInfo,
         captchaToken: captchaToken,
       },
     };
