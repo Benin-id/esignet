@@ -111,14 +111,14 @@ jobs:
       RELEASE_DOCKER_HUB: ${{ secrets.RELEASE_DOCKER_HUB }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 
-  build_dockers_oidc_ui:
+  build-dockers-oidc-ui:
     strategy:
       matrix:
         include:
           - SERVICE_LOCATION: 'oidc-ui'
             SERVICE_NAME: 'oidc-ui'
       fail-fast: false
-    name: Build Docker ${{ matrix.SERVICE_NAME }}
+    name: ${{ matrix.SERVICE_NAME }}
     uses: iiitb-pilot/kattu/.github/workflows/docker-build.yml@master
     with:
       SERVICE_LOCATION: ${{ matrix.SERVICE_LOCATION }}
