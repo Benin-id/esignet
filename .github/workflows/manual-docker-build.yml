@@ -3,7 +3,7 @@ name: Maven Package upon a push odic-ui
 on: workflow_dispatch
 
 jobs:
-  build-maven-esignet:
+  build_maven_esignet:
     uses: iiitb-pilot/kattu/.github/workflows/maven-build.yml@master
     with:
       SERVICE_LOCATION: ./
@@ -15,17 +15,18 @@ jobs:
       GPG_SECRET: ${{ secrets.GPG_SECRET }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 
-  build-dockers:
-    needs: build-maven-esignet
+  build_dockers_esignet_with_plugins:
+    needs: [build_maven_esignet_with_plugins, check_snapshot_version, publish_to_nexus]
+    if: ${{ needs.check_snapshot_version.outputs.is_condition == 'true' }}
     strategy:
       matrix:
         include:
-          - SERVICE_LOCATION: 'esignet-service'
-            SERVICE_NAME: 'esignet'
-            BUILD_ARTIFACT: 'esignet'
+          - SERVICE_LOCATION: 'esignet-with-plugins'
+            SERVICE_NAME: 'esignet-with-plugins'
+            BUILD_ARTIFACT: 'esignet-with-plugins'
       fail-fast: false
-    name: ${{ matrix.SERVICE_NAME }}
-    uses: iiitb-pilot/kattu/.github/workflows/docker-build.yml@master
+    name: Build Docker ${{ matrix.SERVICE_NAME }}
+    uses: mosip/kattu/.github/workflows/docker-build.yml@master
     with:
       SERVICE_LOCATION: ${{ matrix.SERVICE_LOCATION }}
       SERVICE_NAME: ${{ matrix.SERVICE_NAME }}
@@ -53,4 +54,3 @@ jobs:
       ACTOR_DOCKER_HUB: ${{ secrets.ACTOR_DOCKER_HUB }}
       RELEASE_DOCKER_HUB: ${{ secrets.RELEASE_DOCKER_HUB }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-
