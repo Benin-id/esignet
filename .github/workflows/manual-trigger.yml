@@ -1,10 +1,13 @@
 name: Maven Package upon a push-ui
 
+on:
+  workflow_dispatch:
+
 jobs:
   build_maven_esignet:
     uses: iiitb-pilot/kattu/.github/workflows/maven-build.yml@master
     with:
-      SERVICE_LOCATION: ./ 
+      SERVICE_LOCATION: ./
       BUILD_ARTIFACT: esignet
     secrets:
       OSSRH_USER: ${{ secrets.OSSRH_USER }}
@@ -12,8 +15,8 @@ jobs:
       OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
       GPG_SECRET: ${{ secrets.GPG_SECRET }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-      
-    build_dockers_esignet_with_plugins:
+
+  build_dockers_esignet_with_plugins:
     needs: [build_maven_esignet, check_snapshot_version, publish_to_nexus]
     if: ${{ needs.check_snapshot_version.outputs.is_condition == 'true' }}
     strategy:
