@@ -24,7 +24,7 @@ const allErrorStatusCodes = [
 // Create own axios instance with defaults.
 export const ApiService = axios.create({
   withCredentials: true,
-  baseURL: "http://localhost:8088/v1/esignet"
+   baseURL: API_BASE_URL
 });
 
 export const setupResponseInterceptor = (navigate) => {
