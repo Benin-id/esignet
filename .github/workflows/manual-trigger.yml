@@ -18,7 +18,7 @@ jobs:
 
   build_dockers_esignet_with_plugins:
     needs: [build_maven_esignet]
-    if: ${{ needs.build_maven_esignet.is_condition == 'true' }}
+    if: ${{ needs.build_maven_esignet.outputs.is_condition == 'true' }}  # Adjusted to use outputs
     strategy:
       matrix:
         include:
@@ -27,7 +27,7 @@ jobs:
             BUILD_ARTIFACT: 'esignet-with-plugins'
       fail-fast: false
     name: Build Docker ${{ matrix.SERVICE_NAME }}
-    uses: mosip/kattu/.github/workflows/docker-build.yml@master
+    uses: iiitb-pilot/kattu/.github/workflows/docker-build.yml@master  # Use same repo as other jobs
     with:
       SERVICE_LOCATION: ${{ matrix.SERVICE_LOCATION }}
       SERVICE_NAME: ${{ matrix.SERVICE_NAME }}
