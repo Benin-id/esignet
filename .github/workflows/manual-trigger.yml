@@ -7,7 +7,7 @@ jobs:
   build_maven_esignet:
     uses: iiitb-pilot/kattu/.github/workflows/maven-build.yml@master
     with:
-      SERVICE_LOCATION: ./
+      SERVICE_LOCATION: ./ 
       BUILD_ARTIFACT: esignet
     secrets:
       OSSRH_USER: ${{ secrets.OSSRH_USER }}
@@ -25,8 +25,8 @@ jobs:
             SERVICE_NAME: 'esignet'
             BUILD_ARTIFACT: 'esignet'
       fail-fast: false
-    name: ${{ matrix.SERVICE_NAME }}
-    uses: iiitb-pilot/kattu/.github/workflows/maven-build.yml@master
+    name: Build Docker ${{ matrix.SERVICE_NAME }}
+    uses: iiitb-pilot/kattu/.github/workflows/docker-build.yml@master   # fixed
     with:
       SERVICE_LOCATION: ${{ matrix.SERVICE_LOCATION }}
       SERVICE_NAME: ${{ matrix.SERVICE_NAME }}
@@ -39,7 +39,7 @@ jobs:
 
   build_dockers_esignet_with_plugins:
     needs: [build_maven_esignet]
-    if: ${{ needs.build_maven_esignet.outputs.is_condition == 'true' }}  # Adjusted to use outputs
+    if: ${{ needs.build_maven_esignet.outputs.is_condition == 'true' }}
     strategy:
       matrix:
         include:
@@ -48,7 +48,7 @@ jobs:
             BUILD_ARTIFACT: 'esignet-with-plugins'
       fail-fast: false
     name: Build Docker ${{ matrix.SERVICE_NAME }}
-    uses: iiitb-pilot/kattu/.github/workflows/docker-build.yml@master  # Use same repo as other jobs
+    uses: iiitb-pilot/kattu/.github/workflows/docker-build.yml@master
     with:
       SERVICE_LOCATION: ${{ matrix.SERVICE_LOCATION }}
       SERVICE_NAME: ${{ matrix.SERVICE_NAME }}
