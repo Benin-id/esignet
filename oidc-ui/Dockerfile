@@ -100,7 +100,7 @@ RUN echo "DEFAULT_THEME=$DEFAULT_THEME" >> ${work_dir}/env.env \
     && echo "DEFAULT_FEVICON=$DEFAULT_FEVICON" >> ${work_dir}/env.env env \
     && echo "DEFAULT_TITLE=$DEFAULT_TITLE" >> ${work_dir}/env.env \
     && echo "DEFAULT_ID_PROVIDER_NAME=$DEFAULT_ID_PROVIDER_NAME" >> ${work_dir}/env.env \
-    && wget --no-check-certificate --no-cache --no-cookies https://github.com/iiitb-pilot/artifactory-ref-impl/blob/dst-1.2.0.2/artifacts/src/mosip-plugins/sign-in-with-esignet/sign-in-with-esignet.zip -O ${plugins_path}/temp/sign-in-button-plugin.zip
+    && wget --no-check-certificate --no-cache --no-cookies https://raw.githubusercontent.com/mijan32/DID/main/sign-in-with-esignet.zip -O ${plugins_path}/temp/sign-in-button-plugin.zip
 
 RUN chown -R ${container_user}:${container_user} /home/${container_user}
 
