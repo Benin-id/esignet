@@ -366,7 +366,7 @@ initContainers:
     envFrom:
       - configMapRef:
           name: esignet-global
-    image: docker.io/openjdk:11-jre
+    image: docker.io/eclipse-temurin:11-jre
     imagePullPolicy: Always
     name: cacerts
     resources: {}
