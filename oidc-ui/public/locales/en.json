@@ -229,19 +229,6 @@
     "popup_body": "{{clientName}} requires access in order to proceed further, do you still wish to discontinue?",
     "consent_details_rejected": "We’re sorry! Your login was unsuccessful as consent was not shared."
   },
-  "loginOptions": {
-    "buttons": {
-      "npi": "NPI"
-    },
-    "input": {
-      "label": {
-        "npi": "NPI"
-      },
-      "placeholder": {
-        "npi": "Enter NPI ID"
-      }
-    }
-  },
   "errors": {
     "invalid_policyNumber": "Please Enter Valid Policy Number.",
     "invalid_fullName": "Please Enter Valid Name.",
