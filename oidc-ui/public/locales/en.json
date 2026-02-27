@@ -298,23 +298,14 @@
   },
   "loginOptions": {
     "buttons": {
-      "mobile": "Mobile Number",
-      "nrc": "NRC ID",
-      "vid": "UIN/VID",
-      "email": "Email"
+      "npi": "NPI"
     },
     "input": {
       "label": {
-        "mobile": "Mobile Number",
-        "nrc": "NRC ID",
-        "vid": "UIN/VID",
-        "email": "Email"
+        "npi": "NPI"
       },
       "placeholder": {
-        "mobile": "Enter Mobile Number",
-        "nrc": "Enter NRC ID",
-        "vid": "Enter UIN/VID",
-        "email": "Enter Email ID"
+        "npi": "Enter NPI ID"
       }
     }
   },
