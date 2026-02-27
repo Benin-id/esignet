@@ -147,6 +147,7 @@
     "wallet_header": "Scan the QR code with {{walletName}} app"
   },
   "otp": {
+    "npi": "NPI",
     "sign_in_with_otp": "Login with NPI",
     "resend_otp": "Resend OTP",
     "not_a_robot": "I'm Not a Robot",
@@ -181,6 +182,7 @@
   "signInOption": {
     "login_option_heading": "Choose How You Want to Login:",
     "login_with_id": "Login with {{option}}",
+    "npi": "NPI",
     "verify_with_id": "Verify with {{option}}",
     "link_using_id": "Link using {{option}}",
     "PIN": "PIN",
