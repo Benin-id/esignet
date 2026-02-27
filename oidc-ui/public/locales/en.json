@@ -147,7 +147,8 @@
     "wallet_header": "Scan the QR code with {{walletName}} app"
   },
   "otp": {
-    "sign_in_with_otp": "Login with OTP",
+    "npi": "NPI",
+    "sign_in_with_otp": "Login with NPI",
     "resend_otp": "Resend OTP",
     "not_a_robot": "I'm Not a Robot",
     "get_otp": "Get OTP",
@@ -181,6 +182,7 @@
   "signInOption": {
     "login_option_heading": "Choose How You Want to Login:",
     "login_with_id": "Login with {{option}}",
+    "npi": "NPI",
     "verify_with_id": "Verify with {{option}}",
     "link_using_id": "Link using {{option}}",
     "PIN": "PIN",
@@ -298,23 +300,14 @@
   },
   "loginOptions": {
     "buttons": {
-      "mobile": "Mobile Number",
-      "nrc": "NRC ID",
-      "vid": "UIN/VID",
-      "email": "Email"
+      "npi": "NPI"
     },
     "input": {
       "label": {
-        "mobile": "Mobile Number",
-        "nrc": "NRC ID",
-        "vid": "UIN/VID",
-        "email": "Email"
+        "npi": "NPI"
       },
       "placeholder": {
-        "mobile": "Enter Mobile Number",
-        "nrc": "Enter NRC ID",
-        "vid": "Enter UIN/VID",
-        "email": "Enter Email ID"
+        "npi": "Enter NPI ID"
       }
     }
   },
