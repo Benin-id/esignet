@@ -147,7 +147,7 @@
     "wallet_header": "Scan the QR code with {{walletName}} app"
   },
   "otp": {
-    "sign_in_with_otp": "Login with OTP",
+    "sign_in_with_otp": "Login with NPI",
     "resend_otp": "Resend OTP",
     "not_a_robot": "I'm Not a Robot",
     "get_otp": "Get OTP",
