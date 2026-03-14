@@ -1,11 +1,9 @@
 {
   "languages_2Letters": {
-    "en": "English",
     "fr": "Français"
   },
   "rtlLanguages": ["ar"],
   "langCodeMapping": {
-    "eng": "en",
     "fra": "fr"
   }
 }
